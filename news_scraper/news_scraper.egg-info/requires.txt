@@ -1,0 +1,7 @@
+beautifulsoup4
+requests
+pinecone-client
+sentence-transformers
+transformers[torch]
+nltk
+python-dotenv

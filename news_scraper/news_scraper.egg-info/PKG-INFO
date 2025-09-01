@@ -1,0 +1,91 @@
+Metadata-Version: 2.4
+Name: news_scraper
+Version: 1.0.0
+Summary: A package for scraping, storing, and searching news articles
+Home-page: https://github.com/yourusername/news_scraper
+Author: Your Name
+Author-email: your.email@example.com
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: beautifulsoup4
+Requires-Dist: requests
+Requires-Dist: pinecone-client
+Requires-Dist: sentence-transformers
+Requires-Dist: transformers[torch]
+Requires-Dist: nltk
+Requires-Dist: python-dotenv
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# News Scraper
+
+A Python package for scraping, storing, and searching news articles using vector similarity search.
+
+## Project Structure
+
+```
+news_scraper/
+â”œâ”€â”€ data/                    # Directory for storing article JSON files
+â”œâ”€â”€ news_scraper/           # Main package directory
+â”‚   â”œâ”€â”€ __init__.py
+â”‚   â”œâ”€â”€ scrapers/           # News scraping modules
+â”‚   â”‚   â””â”€â”€ bbc_scraper.py
+â”‚   â”œâ”€â”€ db/                 # Database storage modules
+â”‚   â”‚   â””â”€â”€ vector_store.py
+â”‚   â””â”€â”€ search/            # Search functionality
+â”‚       â””â”€â”€ news_search.py
+â”œâ”€â”€ scripts/               # Command-line scripts
+â”‚   â”œâ”€â”€ scrape_news.py
+â”‚   â”œâ”€â”€ store_articles.py
+â”‚   â””â”€â”€ search_articles.py
+â”œâ”€â”€ tests/                # Test files
+â”œâ”€â”€ setup.py
+â””â”€â”€ README.md
+```
+
+## Setup
+
+1. Create a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+2. Install the package:
+```bash
+pip install -e .
+```
+
+3. Create a .env file with your Pinecone API key:
+```
+PINECONE_API_KEY=your-api-key-here
+```
+
+## Usage
+
+1. Scrape latest news:
+```bash
+python scripts/scrape_news.py
+```
+
+2. Store articles in vector database:
+```bash
+python scripts/store_articles.py
+```
+
+3. Search articles:
+```bash
+python scripts/search_articles.py
+```
+
+## Requirements
+
+- Python 3.8 or higher
+- Pinecone account (for vector database)
+- NLTK data (downloaded automatically on first run)
